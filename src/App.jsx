@@ -16,15 +16,15 @@ function App() {
     }, []);
 
     const handleLoadMore = () => {
-        setPage((prev) => prev + 1);
-
         fetch(
-            `https://api.unsplash.com/photos?page=${page}&count=10&client_id=${
-                import.meta.env.VITE_UNSPLASH_ACCESSKEY
-            }`
+            `https://api.unsplash.com/photos?page=${
+                page + 1
+            }&count=10&client_id=${import.meta.env.VITE_UNSPLASH_ACCESSKEY}`
         )
             .then((response) => response.json())
             .then((data) => setPhotos([...photos, ...data]));
+
+        setPage((prev) => prev + 1);
     };
 
     return (
