@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .title-animation {
+        text-shadow: 'blue 1px 0 5px';
+        color: transparent;
+        background: linear-gradient(
+            90deg,
+            rgba(41, 203, 226, 1) 13%,
+            rgba(235, 38, 143, 1) 49%,
+            rgba(251, 233, 0, 1) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-size: 300%;
+        animation: title-animation 15s infinite alternate linear;
+    }
+}
+
+@keyframes title-animation {
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: right top;
+    }
+}
