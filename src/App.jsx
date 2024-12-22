@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import Navbar from './components/shared/Navbar';
 import Footer from './components/shared/Footer';
 import LoadingSpinner from './components/shared/LoadingSpinner';
@@ -16,6 +17,8 @@ function App() {
             </main>
 
             <Footer />
+
+            <Toaster />
         </main>
     );
 }
