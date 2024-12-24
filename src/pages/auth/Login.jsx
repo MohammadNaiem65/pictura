@@ -21,12 +21,14 @@ export default function Login() {
                 email,
                 password,
             });
-            
+
             return response.data;
         },
         onSuccess: (data) => {
             setAuthToken({ token: data.accessToken });
             setUser({ data: data.user });
+
+            localStorage.setItem('auth', JSON.stringify(data));
 
             navigate('/');
         },
