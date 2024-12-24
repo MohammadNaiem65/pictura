@@ -1,12 +1,17 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import useIsAuthenticated from './hooks/useIsAuthenticated';
+import LoadingSpinner from './components/shared/LoadingSpinner';
 import Navbar from './components/shared/Navbar';
 import Footer from './components/shared/Footer';
-import LoadingSpinner from './components/shared/LoadingSpinner';
 
 function App() {
-    return (
+    const isAuthenticated = useIsAuthenticated();
+
+    return !isAuthenticated ? (
+        <LoadingSpinner />
+    ) : (
         <main className='min-h-screen'>
             <Navbar />
 
