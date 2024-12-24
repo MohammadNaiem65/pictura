@@ -1,6 +1,8 @@
 import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('../pages/Home'));
 const AllProducts = lazy(() => import('../pages/AllProducts'));
@@ -23,15 +25,27 @@ const router = createBrowserRouter([
             },
             {
                 path: '/cart',
-                element: <Cart />,
+                element: (
+                    <PrivateRoute>
+                        <Cart />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: '/login',
-                element: <Login />,
+                element: (
+                    <PublicRoute>
+                        <Login />
+                    </PublicRoute>
+                ),
             },
             {
                 path: '/register',
-                element: <Register />,
+                element: (
+                    <PublicRoute>
+                        <Register />
+                    </PublicRoute>
+                ),
             },
         ],
     },
