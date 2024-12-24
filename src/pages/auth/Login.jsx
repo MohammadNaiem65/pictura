@@ -1,17 +1,44 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useMutation } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import AuthContext from '../../contexts/authContext';
+import UserContext from '../../contexts/UserContext';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
     const navigate = useNavigate();
+    const axiosSecure = useAxiosSecure();
+    const { setAuthToken } = useContext(AuthContext);
+    const { setUser } = useContext(UserContext);
+
+    const { mutate } = useMutation({
+        mutationFn: async () => {
+            const response = await axiosSecure.post('/login', {
+                email,
+                password,
+            });
+            
+            return response.data;
+        },
+        onSuccess: (data) => {
+            setAuthToken({ token: data.accessToken });
+            setUser({ data: data.user });
+
+            navigate('/');
+        },
+        onError: (error) => {
+            toast.error(error.response.data);
+        },
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add authentication logic here, then navigate
-        console.log('Email:', email, 'Password:', password);
-        // Example: navigate to home after successful login
-        navigate('/');
+
+        mutate();
     };
 
     return (
