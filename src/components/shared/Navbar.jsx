@@ -1,10 +1,23 @@
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { BsBoxSeam } from 'react-icons/bs';
 import { GoHome } from 'react-icons/go';
 import { RiLoginCircleLine, RiShoppingCartLine } from 'react-icons/ri';
+import UserContext from '../../contexts/UserContext';
+import AuthContext from '../../contexts/AuthContext';
 import logoImg from '../../assets/logo.jpg';
 
 export default function Navbar() {
+    const { user, setUser } = useContext(UserContext);
+    const { setAuthToken } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        localStorage.removeItem('auth');
+
+        setUser({ data: null });
+        setAuthToken({ token: null });
+    };
+
     return (
         <nav className='px-8 py-4 border-b-2 flex justify-between items-center relative'>
             <img className='size-16' src={logoImg} alt='logo' />
@@ -15,27 +28,39 @@ export default function Navbar() {
 
             {/* Navigation Links */}
             <div className='flex items-center gap-6'>
-                <Link
+                <NavLink
                     to='/'
-                    className='flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors'
+                    className={({ isActive }) =>
+                        `flex items-center gap-2 hover:text-blue-300 transition-colors ${
+                            isActive ? 'text-blue-500' : 'text-gray-600'
+                        }`
+                    }
                 >
                     <GoHome className='w-5 h-5' />
                     <span>Home</span>
-                </Link>
+                </NavLink>
 
-                <Link
+                <NavLink
                     to='/all-products'
-                    className='flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors'
+                    className={({ isActive }) =>
+                        `flex items-center gap-2 hover:text-blue-300 transition-colors ${
+                            isActive ? 'text-blue-500' : 'text-gray-600'
+                        }`
+                    }
                 >
-                    <BsBoxSeam className='w-5 h-5 text-[#3B82F6]' />
+                    <BsBoxSeam className='w-5 h-5' />
                     <span>All Products</span>
-                </Link>
+                </NavLink>
 
                 {/* Cart Icon */}
                 <div className='relative group'>
-                    <Link
+                    <NavLink
                         to='/cart'
-                        className='flex items-center text-gray-600 hover:text-gray-900 transition-colors gap-x-2'
+                        className={({ isActive }) =>
+                            `flex items-center gap-2 hover:text-blue-300 transition-colors ${
+                                isActive ? 'text-blue-500' : 'text-gray-600'
+                            }`
+                        }
                     >
                         <div className='relative'>
                             <RiShoppingCartLine className='w-5 h-5' />
@@ -44,16 +69,29 @@ export default function Navbar() {
                             </span>
                         </div>
                         Cart
-                    </Link>
+                    </NavLink>
                 </div>
 
-                <Link
-                    to='/login'
-                    className='flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors'
-                >
-                    <RiLoginCircleLine className='w-5 h-5' />
-                    <span>Login</span>
-                </Link>
+                {user?.data?.id ? (
+                    <button
+                        className='flex items-center gap-2 text-gray-600 hover:text-blue-300 transition-colors'
+                        onClick={handleLogout}
+                    >
+                        <RiLoginCircleLine className='w-5 h-5' /> Logout
+                    </button>
+                ) : (
+                    <NavLink
+                        to='/login'
+                        className={({ isActive }) =>
+                            `flex items-center gap-2 hover:text-blue-300 transition-colors ${
+                                isActive ? 'text-blue-500' : 'text-gray-600'
+                            }`
+                        }
+                    >
+                        <RiLoginCircleLine className='w-5 h-5' />
+                        <span>Login</span>
+                    </NavLink>
+                )}
             </div>
         </nav>
     );
