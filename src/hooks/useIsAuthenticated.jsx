@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import AuthContext from '../contexts/authContext';
+import AuthContext from '../contexts/AuthContext';
 import UserContext from '../contexts/UserContext';
 
 export default function useIsAuthenticated() {
