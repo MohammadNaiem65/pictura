@@ -3,14 +3,16 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
-import AuthContext from '../../contexts/authContext';
+import AuthContext from '../../contexts/AuthContext';
 import UserContext from '../../contexts/UserContext';
+import { useLocation } from 'react-router-dom';
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const navigate = useNavigate();
+    const location = useLocation();
     const axiosSecure = useAxiosSecure();
     const { setAuthToken } = useContext(AuthContext);
     const { setUser } = useContext(UserContext);
@@ -30,7 +32,7 @@ export default function Login() {
 
             localStorage.setItem('auth', JSON.stringify(data));
 
-            navigate('/');
+            navigate(location?.state?.from?.pathname || '/');
         },
         onError: (error) => {
             toast.error(error.response.data);
