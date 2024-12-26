@@ -16,7 +16,7 @@ export default function ProductGrid() {
         isError,
         error,
     } = useQuery({
-        queryKey: 'products',
+        queryKey: ['products'],
         queryFn: async () => {
             const { data } = await axiosSecure.get(
                 '/products?_sort=rating&_order=desc&_limit=4'
