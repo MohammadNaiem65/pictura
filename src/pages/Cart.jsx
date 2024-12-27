@@ -1,8 +1,33 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTrash, FaArrowLeft } from 'react-icons/fa6';
+import CartContext from '../contexts/CartContext';
 import CartSummary from '../components/Cart/CartSummary';
 
 export default function Cart() {
+    const { cart, setCart } = useContext(CartContext);
+
+    const updateQuantity = (id, newQuantity) => {
+        const updatedCart = cart.map((item) =>
+            item.id === id ? { ...item, quantity: newQuantity } : item
+        );
+
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+    };
+
+    const removeItem = (id) => {
+        const updatedCart = cart.filter((item) => item.id !== id);
+
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+    };
+
+    const subtotal = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+
     return (
         <div className='max-w-7xl mx-auto px-4 py-16'>
             <h1 className='text-3xl font-bold mb-8'>Shopping Cart</h1>
@@ -11,7 +36,7 @@ export default function Cart() {
                 <div className='text-center py-12'>
                     <p className='text-gray-600 mb-4'>Your cart is empty</p>
                     <Link
-                        to='/products'
+                        to='/all-products'
                         className='inline-flex items-center text-indigo-600 hover:text-indigo-700'
                     >
                         <FaArrowLeft className='mr-2 h-5 w-5' />
