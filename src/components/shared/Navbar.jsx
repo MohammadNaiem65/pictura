@@ -4,12 +4,14 @@ import { BsBoxSeam } from 'react-icons/bs';
 import { GoHome } from 'react-icons/go';
 import { RiLoginCircleLine, RiShoppingCartLine } from 'react-icons/ri';
 import UserContext from '../../contexts/UserContext';
+import CartContext from '../../contexts/CartContext';
 import AuthContext from '../../contexts/AuthContext';
 import logoImg from '../../assets/logo.jpg';
 
 export default function Navbar() {
     const { user, setUser } = useContext(UserContext);
     const { setAuthToken } = useContext(AuthContext);
+    const { cart } = useContext(CartContext);
 
     const handleLogout = () => {
         localStorage.removeItem('auth');
@@ -17,6 +19,11 @@ export default function Navbar() {
         setUser({ data: null });
         setAuthToken({ token: null });
     };
+
+    const totalQuantity = cart?.reduce(
+        (total, curr) => total + curr.quantity,
+        0
+    );
 
     return (
         <nav className='px-8 py-4 border-b-2 flex justify-between items-center relative'>
@@ -64,9 +71,11 @@ export default function Navbar() {
                     >
                         <div className='relative'>
                             <RiShoppingCartLine className='w-5 h-5' />
-                            <span className='absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center'>
-                                8
-                            </span>
+                            {totalQuantity ? (
+                                <span className='absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center'>
+                                    {totalQuantity}
+                                </span>
+                            ) : null}
                         </div>
                         Cart
                     </NavLink>
