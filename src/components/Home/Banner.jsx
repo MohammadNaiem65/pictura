@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import { FaArrowRightLong } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
+import { FaArrowRightLong } from 'react-icons/fa6';
 import bannerImg from '../../assets/banner.jpg';
 
 export default function Banner() {
-    const [email, setEmail] = useState('');
+    const [query, setQuery] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Email submitted:', email);
+        navigate(`/all-products?query=${query}`);
     };
 
     return (
@@ -37,7 +39,8 @@ export default function Banner() {
                 </h1>
 
                 <p className='text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto'>
-                    A next gen e-commerce platform for digital art, instruments, music, collectibles, and more.
+                    A next gen e-commerce platform for digital art, instruments,
+                    music, collectibles, and more.
                 </p>
 
                 <form
@@ -45,9 +48,9 @@ export default function Banner() {
                     className='flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto'
                 >
                     <input
-                        type='email'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        type='text'
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
                         placeholder='Search for "Canvas"'
                         className='flex-1 px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all'
                         required
