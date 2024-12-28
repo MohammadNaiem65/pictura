@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import CartContext from '../../contexts/CartContext';
@@ -31,14 +32,21 @@ export default function ProductCard({ product }) {
     };
 
     return (
-        <div className='bg-white rounded-lg shadow-md overflow-hidden'>
-            <img
-                src={picture}
-                alt={name}
-                className='w-full h-48 object-cover'
-            />
+        <div className='bg-white rounded-lg shadow-md overflow-hidden group'>
+            <Link to={`/all-products/${id}`}>
+                <img
+                    src={picture}
+                    alt={name}
+                    className='w-full h-48 object-cover group-hover:scale-105 duration-300'
+                />
+            </Link>
             <div className='p-4'>
-                <h3 className='text-lg font-semibold text-gray-900'>{name}</h3>
+                <Link
+                    to={`/all-products/${id}`}
+                    className='text-lg font-semibold text-gray-900 line-clamp-2 hover:underline'
+                >
+                    {name}
+                </Link>
 
                 <StarRating rating={rating} />
                 <div className='mt-4 flex items-center justify-between'>
