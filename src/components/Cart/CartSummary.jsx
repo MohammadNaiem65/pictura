@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import CartContext from '../../contexts/CartContext';
+import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 import toast from 'react-hot-toast';
 import LoadingSpinner from '../shared/LoadingSpinner';
 
@@ -28,7 +29,10 @@ export default function CartSummary({ subtotal, shipping }) {
                 <div className='space-y-2'>
                     <div className='flex justify-between'>
                         <span>Subtotal</span>
-                        <span>${subtotal?.toFixed(2)}</span>
+                        <span className='flex items-center gap-x-1'>
+                            <FaBangladeshiTakaSign />
+                            {subtotal?.toFixed(2)}
+                        </span>
                     </div>
                     <div className='flex justify-between'>
                         <span>Shipping</span>
@@ -37,8 +41,9 @@ export default function CartSummary({ subtotal, shipping }) {
                     <div className='border-t pt-2 mt-2'>
                         <div className='flex justify-between font-semibold'>
                             <span>Total</span>
-                            <span>
-                                ${(subtotal + (shipping || 0)).toFixed(2)}
+                            <span className='flex items-center gap-x-1'>
+                                <FaBangladeshiTakaSign />
+                                {(subtotal + (shipping || 0)).toFixed(2)}
                             </span>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import CartContext from '../contexts/CartContext';
@@ -78,8 +79,9 @@ export default function Product() {
                             </p>
 
                             <div className='mt-8 flex items-center justify-between'>
-                                <span className='text-3xl font-bold text-gray-900'>
-                                    ${price.toFixed(2)}
+                                <span className='text-3xl font-bold text-gray-900 flex items-center gap-x-1'>
+                                    <FaBangladeshiTakaSign />
+                                    {price.toFixed(2)}
                                 </span>
                                 <button
                                     onClick={handleAddToCart}

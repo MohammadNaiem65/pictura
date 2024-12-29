@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import CartContext from '../../contexts/CartContext';
 import StarRating from './StarRating';
@@ -50,7 +51,10 @@ export default function ProductCard({ product }) {
 
                 <StarRating rating={rating} />
                 <div className='mt-4 flex items-center justify-between'>
-                    <span className='text-indigo-600 font-bold'>${price}</span>
+                    <span className='text-indigo-600 font-bold flex items-center'>
+                        <FaBangladeshiTakaSign />
+                        {price}
+                    </span>
                     <button
                         onClick={handleAddToCart}
                         className='flex items-center space-x-1 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors'

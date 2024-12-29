@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { FaTrash, FaArrowLeft } from 'react-icons/fa6';
+import { FaTrash, FaArrowLeft, FaBangladeshiTakaSign } from 'react-icons/fa6';
 import CartContext from '../contexts/CartContext';
 import CartSummary from '../components/Cart/CartSummary';
 
@@ -57,11 +57,15 @@ export default function Cart() {
                                     className='w-24 h-24 object-cover rounded'
                                 />
                                 <div className='flex-1'>
-                                    <h3 className='font-semibold'>
+                                    <Link
+                                        to={`/all-products/${item.id}`}
+                                        className='font-semibold hover:underline'
+                                    >
                                         {item.name}
-                                    </h3>
-                                    <p className='text-gray-600'>
-                                        ${item.price}
+                                    </Link>
+                                    <p className='text-gray-600 flex items-center gap-x-1'>
+                                        <FaBangladeshiTakaSign />
+                                        {item.price}
                                     </p>
                                     <div className='mt-2 flex items-center space-x-2'>
                                         <select
@@ -89,8 +93,13 @@ export default function Cart() {
                                     </div>
                                 </div>
                                 <div className='text-right'>
-                                    <p className='font-semibold'>
-                                        ${(item.price * 1).toFixed(2)}
+                                    <p className='font-semibold flex items-center gap-x-1'>
+                                        <FaBangladeshiTakaSign />
+                                        {(
+                                            item.price *
+                                            1 *
+                                            item.quantity
+                                        ).toFixed(2)}
                                     </p>
                                 </div>
                             </div>
