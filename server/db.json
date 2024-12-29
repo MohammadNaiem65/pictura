@@ -1,164 +1,192 @@
 {
     "products": [
         {
-            "_id": "673d1c914941ec428dcd1ad2",
+            "id": "673d1c914941ec428dcd1ad2",
             "name": "LCD Writing Tablet Single Color - 8.5 Inches",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/LCD_Writing_Tablet_85_Inches-Hrid_-b2086-221005.jpg",
             "price": 290,
             "rating": 3,
-            "stock": 24
+            "stock": 24,
+            "description": "A single color LCD writing tablet with an 8.5-inch screen, perfect for drawing and writing."
         },
         {
-            "_id": "673d1c910ead6fd7b0afc4a3",
+            "id": "673d1c910ead6fd7b0afc4a3",
             "name": "Wax Crayon 57mm (1 pack)",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/6443df830_184679.jpg",
             "price": 267,
-            "rating": 1,
-            "stock": 17
+            "rating": 4,
+            "stock": 17,
+            "description": "A pack of 57mm wax crayons, ideal for coloring and drawing."
         },
         {
-            "_id": "673d1c91c3e06b3809396239",
+            "id": "673d1c91c3e06b3809396239",
             "name": "Matador i-teen Color Pencil Full Size - 24 Color",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Matador_i_teen_Color_Pencil_Full_Size_24-Matador_Group-522ad-176818.jpg",
             "price": 182,
-            "rating": 4,
-            "stock": 28
+            "rating": 4.5,
+            "stock": 28,
+            "description": "A set of 24 full-size color pencils from Matador, perfect for young artists."
         },
         {
-            "_id": "673d1c91ac77e0cddcb2b025",
+            "id": "673d1c91ac77e0cddcb2b025",
             "name": "Matador i-teen Color Pencil - Full Size (12 Color)",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Matador_i_teen_Color_Pencil_Full_Size_12-Matador_Group-85573-176817.jpg",
             "price": 229,
             "rating": 5,
-            "stock": 5
+            "stock": 5,
+            "description": "A set of 12 full-size color pencils from Matador, ideal for detailed coloring."
         },
         {
-            "_id": "673d1c914999a62c4082329f",
+            "id": "673d1c914999a62c4082329f",
             "name": "Fevicryl Acrylic Colours (DARK ULTRAMARINE) - 200 ml",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Fevicryl_Acrylic_Colours_DARK_ULTRAMARIN-Pidilite_Speciality_Chemicals_BD_Pvt_Ltd-2f7c3-201769.jpg",
             "price": 492,
-            "rating": 1,
-            "stock": 36
+            "rating": 3,
+            "stock": 36,
+            "description": "A 200 ml bottle of Fevicryl acrylic colors in dark ultramarine, suitable for various art projects."
         },
         {
-            "_id": "673d1c91e2d188aac385fd38",
+            "id": "673d1c91e2d188aac385fd38",
             "name": "Keep Smiling Acrylic Color Set 6Tubes 30ML",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/KeepSmiling_Acrylic_Color_Set_6Tubes_30M-Keep_Smiling-d5a23-262896.jpg",
             "price": 447,
-            "rating": 1,
-            "stock": 39
+            "rating": 3.5,
+            "stock": 39,
+            "description": "A set of 6 tubes of 30ml acrylic colors from Keep Smiling, perfect for painting."
         },
         {
-            "_id": "673d1c91b8b8f7a68077e0cc",
+            "id": "673d1c91b8b8f7a68077e0cc",
             "name": "Artist Palette Water Colour Set of 12 Color 1Paint Brush (Small Size)",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Artist_Palette_Water_Colour_Set_of_12_Co-Not_Applicable-91bf9-263035.jpg",
             "price": 140,
-            "rating": 1,
-            "stock": 46
+            "rating": 3.1,
+            "stock": 46,
+            "description": "A set of 12 watercolors with a small paintbrush, ideal for artists."
         },
         {
-            "_id": "673d1c910f449e05357e51f8",
+            "id": "673d1c910f449e05357e51f8",
             "name": "Keep Smiling Paint Brush Set 7 Pcs Blue",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Campus_Shop_Paint_Brush_Set_7_Piece_Nylo-Hrid-6d495-265255.jpg",
             "price": 458,
-            "rating": 3,
-            "stock": 24
+            "rating": 4.3,
+            "stock": 24,
+            "description": "A set of 7 blue paint brushes from Keep Smiling, perfect for various painting techniques."
         },
         {
-            "_id": "673d1c91e454763f15fdf8c3",
+            "id": "673d1c91e454763f15fdf8c3",
             "name": "Keep Smiling Artist Brush 13Pcs - White",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/KeepSmiling_13Pcs_Mix_Artist_Brush_white-Not_Applicable-2259a-263840.jpg",
             "price": 331,
-            "rating": 1,
-            "stock": 18
+            "rating": 4.1,
+            "stock": 18,
+            "description": "A set of 13 white artist brushes from Keep Smiling, suitable for detailed artwork."
         },
         {
-            "_id": "673d1c91d640ca725415b0a9",
+            "id": "673d1c91d640ca725415b0a9",
             "name": "Round Artists Color Palette-1 Pcs",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Round_Artists_Color_Palette_1_pc-Hrid-83262-262956.jpg",
             "price": 408,
-            "rating": 3,
-            "stock": 29
+            "rating": 3.3,
+            "stock": 29,
+            "description": "A round color palette for artists, perfect for mixing colors."
         },
         {
-            "_id": "673d1c91ea6c17f248e126da",
+            "id": "673d1c91ea6c17f248e126da",
             "name": "Paper Blending Stumps 3 pcs Pack Drawing Tool",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Paper_Blending_Stumps_3_pcs_Pack_Drawing-Not_Applicable-65ca6-262921.jpg",
             "price": 260,
-            "rating": 0,
-            "stock": 48
+            "rating": 4.3,
+            "stock": 48,
+            "description": "A pack of 3 paper blending stumps, ideal for blending and shading in drawings."
         },
         {
-            "_id": "673d1c915489519cb6a2cbdd",
+            "id": "673d1c915489519cb6a2cbdd",
             "name": "Water Color Cakes Paint 16 Colors Box for Student's Watercolor Painting",
             "picture": "Water Color Cakes Paint 16 Colors Box for Student's Watercolor Painting",
             "price": 303,
             "rating": 4,
-            "stock": 31
+            "stock": 31,
+            "description": "A box of 16 watercolor cakes, perfect for students' watercolor painting."
         },
         {
-            "_id": "673d1c910e9fe417f7428300",
+            "id": "673d1c910e9fe417f7428300",
             "name": "Fevicol Clear Glue - 50 gm (Water Based)",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Fevicol_Clear_Glue_50_gm_Water_Based-Pidilite_Speciality_Chemicals_BD_Pvt_Ltd-a5233-227072.jpg",
             "price": 289,
             "rating": 5,
-            "stock": 4
+            "stock": 4,
+            "description": "A 50 gm bottle of Fevicol clear glue, water-based and perfect for various crafts."
         },
         {
-            "_id": "673d1c9198944d7a8d576ae9",
+            "id": "673d1c9198944d7a8d576ae9",
             "name": "Deli 502 Super Glue - E7146",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Deli_502_Super_Glue-Deli-0f125-217104.jpg",
             "price": 210,
             "rating": 4,
-            "stock": 31
+            "stock": 31,
+            "description": "A bottle of Deli 502 super glue, ideal for strong and quick bonding."
         },
         {
-            "_id": "673d1c91dd74dd0810df1722",
+            "id": "673d1c91dd74dd0810df1722",
             "name": "Design ruler/Drawing Box - 1 Pcs",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Design_rulerDrawing_Box_1_piece_Original-Not_Applicable-d733e-263020.jpg",
             "price": 195,
-            "rating": 1,
-            "stock": 23
+            "rating": 4.5,
+            "stock": 23,
+            "description": "A design ruler/drawing box, perfect for precise measurements and drawings."
         },
         {
-            "_id": "673d1c91665e28b2260c8379",
+            "id": "673d1c91665e28b2260c8379",
             "name": "Cutting Mat Double-sided Non Slip Printed Grid Quality Cutting Craft Board A4",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Cutting_Mat_Double_sided_Non_Slip_Printe-Not_Applicable-a8d38-262868.jpg",
             "price": 273,
-            "rating": 2,
-            "stock": 44
+            "rating": 3.7,
+            "stock": 44,
+            "description": "A double-sided non-slip cutting mat with a printed grid, A4 size, perfect for crafting."
         },
         {
-            "_id": "673d1c917d347e3d5530983c",
+            "id": "673d1c917d347e3d5530983c",
             "name": "2 pieces Different Shapes Template Ruler / Spirograph Ruler / Geometric Drawing Toys / Stencil Tools / Drafting Design",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/2_pieces_Different_Shapes_Template_Ruler-Not_Applicable-e6ed1-289327.jpg",
             "price": 410,
-            "rating": 2,
-            "stock": 42
+            "rating": 4.2,
+            "stock": 42,
+            "description": "A set of 2 different shapes template rulers, perfect for geometric drawing and drafting."
         },
         {
-            "_id": "673d1c917ecaf1c170ce89c4",
+            "id": "673d1c917ecaf1c170ce89c4",
             "name": "Deli Oil Pastel 12 Colors - EC20104",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Deli_Oil_Pastel_12_Colors-Deli-42271-222381.jpg",
             "price": 288,
-            "rating": 0,
-            "stock": 36
+            "rating": 5,
+            "stock": 36,
+            "description": "A set of 12 oil pastels from Deli, perfect for vibrant and smooth coloring."
         },
         {
-            "_id": "673d1c9141f7470d71f19d53",
+            "id": "673d1c9141f7470d71f19d53",
             "name": "Acramin Ready Colours For Fabric Painting 10 Colour",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/ACRAMIN_Ready_Colours_for_Fabric_Paintin-Not_Applicable-cd054-302037.png",
             "price": 437,
             "rating": 5,
-            "stock": 22
+            "stock": 22,
+            "description": "A set of 10 ready-to-use colors for fabric painting from Acramin."
         },
         {
-            "_id": "673d1c91659c65b6b67775f4",
+            "id": "673d1c91659c65b6b67775f4",
             "name": "Mont Marte Acrylic Color Paint 12",
             "picture": "https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/Mont_Marte_Acrylic_Color_Paint_12-Mont_Marte-9fefc-263854.jpg",
             "price": 127,
-            "rating": 0,
-            "stock": 17
+            "rating": 4,
+            "stock": 17,
+            "description": "A set of 12 acrylic color paints from Mont Marte, perfect for various painting projects."
+        }
+    ],
+    "users": [
+        {
+            "email": "inspiringraman@fearlessmails.com",
+            "password": "$2a$10$AsOjZ7epjaLC4i46mpdFwe3xw6qaedVm6n2nOoGrnah/hZkmd06DW",
+            "name": "Mohammad",
+            "id": 1
         }
     ]
 }
