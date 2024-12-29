@@ -6,6 +6,7 @@ import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('../pages/Home'));
 const AllProducts = lazy(() => import('../pages/AllProducts'));
+const Product = lazy(() => import('../pages/Product'));
 const Cart = lazy(() => import('../pages/Cart'));
 const Login = lazy(() => import('../pages/auth/Login'));
 const Register = lazy(() => import('../pages/auth/Register'));
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
             {
                 path: '/all-products',
                 element: <AllProducts />,
+            },
+            {
+                path: '/all-products/:id',
+                element: (
+                    <PrivateRoute>
+                        <Product />
+                    </PrivateRoute>
+                ),
             },
             {
                 path: '/cart',
